@@ -1,0 +1,34 @@
+
+<div class="todo-app">
+  <div class="title">
+    <h1>My TODOs</h1>
+  </div>
+  
+  <div class="todo-input">
+    <input placeholder="What needs to be done?" 
+    (keyup.enter)="addTodo($event.target)" />
+  </div>
+  <div class="todo-list">
+    <!-- <ul>
+      <li *ngFor="let todo of todos">
+        <input
+          type="checkbox"
+          (click)="toggleTodo(todo)"
+          [checked]="todo.completed"
+        />
+        <span [class.completed]="todo.completed">
+          {{ todo.title }}
+        </span>
+  
+      </li>
+    </ul> -->
+    <div class="todo" *ngFor="let todo of todos">
+      <span class="check-box" (click)="toggleTodo(todo)" [class.checked]="todo.completed"> </span>
+
+      <div class="todo-text" [class.checked]="todo.completed">
+        {{ todo.title }}
+      </div>
+    </div>
+  </div>
+</div>
+
